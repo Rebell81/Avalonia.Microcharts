@@ -6,7 +6,7 @@
 
     <ItemGroup>
       <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
-      <PackageReference Include="SkiaSharp" Version="2.80.3" />
+      <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="2.88.0-preview.140" />
     </ItemGroup>
 
 </Project>
