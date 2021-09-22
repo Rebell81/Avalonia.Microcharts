@@ -59,11 +59,14 @@ namespace Avalonia.Microcharts
                 var canvas = new SKCanvas(bitmap);
                 canvas.Save();
 
-                if (Chart != null) Chart.Draw(canvas, (int) Bounds.Width, (int) Bounds.Height);
-
-                if (context is ISkiaDrawingContextImpl skia)
+                if (Chart != null)
                 {
-                    skia.SkCanvas.DrawBitmap(bitmap, (int)Bounds.X, (int)Bounds.Y);
+                    Chart.Draw(canvas, (int) Bounds.Width, (int) Bounds.Height);
+
+                    if (context is ISkiaDrawingContextImpl skia)
+                    {
+                        skia.SkCanvas.DrawBitmap(bitmap, (int)Bounds.X, (int)Bounds.Y);
+                    }
                 }
             }
         }
