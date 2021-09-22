@@ -49,7 +49,7 @@ namespace Avalonia.Microcharts
             public Chart Chart { get; set; }
             public void Dispose() { }
             public bool HitTest(Point p) => false;
-            public bool Equals(ICustomDrawOperation other) => this.Equals(other);
+            public bool Equals(ICustomDrawOperation other) => false;
 
             public Rect Bounds { get; set; }
 
@@ -59,7 +59,7 @@ namespace Avalonia.Microcharts
                 var canvas = new SKCanvas(bitmap);
                 canvas.Save();
 
-                Chart.Draw(canvas, (int)Bounds.Width, (int)Bounds.Height);
+                if (Chart != null) Chart.Draw(canvas, (int) Bounds.Width, (int) Bounds.Height);
 
                 if (context is ISkiaDrawingContextImpl skia)
                 {
